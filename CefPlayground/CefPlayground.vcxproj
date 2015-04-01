@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2E9C852B-FBE3-40EE-824A-6A8834C66B40}</ProjectGuid>
+    <RootNamespace>CefPlayground</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>E:\github.com\KyleGobel\CefPlayground\CEF\Win;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\github.com\KyleGobel\CefPlayground\CEF\Win\lib;$(LibraryPath)</LibraryPath>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>E:\github.com\KyleGobel\CefPlayground\CEF\Win\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;libcef.lib;libcef_dll_wrapper.lib;comctl32.lib;rpcrt4.lib;shlwapi.lib;cef_sandbox.lib;dbghelp.lib;psapi.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="ClientHandler.cpp" />
+    <ClCompile Include="ClientHandlerWin.cpp" />
+    <ClCompile Include="JavascriptHandler.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.h" />
+    <ClInclude Include="ClientHandler.h" />
+    <ClInclude Include="include\cef_app.h" />
+    <ClInclude Include="include\cef_auth_callback.h" />
+    <ClInclude Include="include\cef_base.h" />
+    <ClInclude Include="include\cef_browser.h" />
+    <ClInclude Include="include\cef_browser_process_handler.h" />
+    <ClInclude Include="include\cef_callback.h" />
+    <ClInclude Include="include\cef_client.h" />
+    <ClInclude Include="include\cef_command_line.h" />
+    <ClInclude Include="include\cef_context_menu_handler.h" />
+    <ClInclude Include="include\cef_cookie.h" />
+    <ClInclude Include="include\cef_dialog_handler.h" />
+    <ClInclude Include="include\cef_display_handler.h" />
+    <ClInclude Include="include\cef_dom.h" />
+    <ClInclude Include="include\cef_download_handler.h" />
+    <ClInclude Include="include\cef_download_item.h" />
+    <ClInclude Include="include\cef_drag_data.h" />
+    <ClInclude Include="include\cef_drag_handler.h" />
+    <ClInclude Include="include\cef_focus_handler.h" />
+    <ClInclude Include="include\cef_frame.h" />
+    <ClInclude Include="include\cef_geolocation.h" />
+    <ClInclude Include="include\cef_geolocation_handler.h" />
+    <ClInclude Include="include\cef_jsdialog_handler.h" />
+    <ClInclude Include="include\cef_keyboard_handler.h" />
+    <ClInclude Include="include\cef_life_span_handler.h" />
+    <ClInclude Include="include\cef_load_handler.h" />
+    <ClInclude Include="include\cef_menu_model.h" />
+    <ClInclude Include="include\cef_navigation_entry.h" />
+    <ClInclude Include="include\cef_origin_whitelist.h" />
+    <ClInclude Include="include\cef_pack_resources.h" />
+    <ClInclude Include="include\cef_pack_strings.h" />
+    <ClInclude Include="include\cef_path_util.h" />
+    <ClInclude Include="include\cef_print_handler.h" />
+    <ClInclude Include="include\cef_print_settings.h" />
+    <ClInclude Include="include\cef_process_message.h" />
+    <ClInclude Include="include\cef_process_util.h" />
+    <ClInclude Include="include\cef_render_handler.h" />
+    <ClInclude Include="include\cef_render_process_handler.h" />
+    <ClInclude Include="include\cef_request.h" />
+    <ClInclude Include="include\cef_request_context.h" />
+    <ClInclude Include="include\cef_request_context_handler.h" />
+    <ClInclude Include="include\cef_request_handler.h" />
+    <ClInclude Include="include\cef_resource_bundle_handler.h" />
+    <ClInclude Include="include\cef_resource_handler.h" />
+    <ClInclude Include="include\cef_response.h" />
+    <ClInclude Include="include\cef_runnable.h" />
+    <ClInclude Include="include\cef_sandbox_win.h" />
+    <ClInclude Include="include\cef_scheme.h" />
+    <ClInclude Include="include\cef_stream.h" />
+    <ClInclude Include="include\cef_string_visitor.h" />
+    <ClInclude Include="include\cef_task.h" />
+    <ClInclude Include="include\cef_trace.h" />
+    <ClInclude Include="include\cef_url.h" />
+    <ClInclude Include="include\cef_urlrequest.h" />
+    <ClInclude Include="include\cef_v8.h" />
+    <ClInclude Include="include\cef_values.h" />
+    <ClInclude Include="include\cef_version.h" />
+    <ClInclude Include="include\cef_web_plugin.h" />
+    <ClInclude Include="include\cef_xml_reader.h" />
+    <ClInclude Include="include\cef_zip_reader.h" />
+    <ClInclude Include="JavascriptHandler.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
